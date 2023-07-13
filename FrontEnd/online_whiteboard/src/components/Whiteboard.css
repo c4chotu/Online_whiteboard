@@ -1,0 +1,355 @@
+canvas {
+  
+  --border-width: 3px;
+  border: var(--border-width) solid transparent;
+  cursor-origin: 16px 16px;
+  border-radius: 20px;
+ 
+}
+
+.canvas-size {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  top: 210px;
+  right: 500px;
+  min-height: 30px;
+  padding: 10px;
+  margin: 10px;
+  justify-content: space-between;
+}
+
+.canvas-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  background-color: #fff; 
+  cursor:pointer;/* Increase the z-index to ensure the canvas is above the PDF */
+}
+
+.pdf-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  z-index: -1;
+}
+.pdf-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pdf-container::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+.pdf-container::-webkit-scrollbar-thumb {
+  background-color: #333333;
+}
+.pdf-container::-webkit-scrollbar-corner {
+  background-color: #f0f0f0; /* Add this line to set the background color of the corner */
+}
+.pdf-navigation {
+  position: sticky;
+  bottom: 10px;
+  left: 10px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  color:black;
+  background-color: #f0f0f0;
+  display: flex;
+}
+
+
+.toolbar {
+  position: absolute;
+  top: 15px;
+  right: 80px;
+  display: flex;
+  background: transparent;
+  padding: 5px;
+  border-radius: 5px;
+  transition: opacity 0.8s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.toolbar.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #34ca48;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.menu-toggle cross {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.menu-toggle:hover {
+  background-color: rgb(255, 254, 254);
+  color: #34ca48;
+}
+
+.menu-icon {
+  position: relative;
+  width: 20px;
+  height: 2px;
+  background-color: #2fc46b;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon:before,
+.menu-icon:after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  background-color: #811b1b;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon:before {
+  top: -6px;
+}
+
+.menu-icon:after {
+  top: 6px;
+}
+
+.menu-toggle.open .menu-icon {
+  transform: rotate(45deg);
+}
+
+.menu-toggle.open .menu-icon:before {
+  transform: rotate(-45deg) translate(-6px, 0);
+}
+
+.menu-toggle.open .menu-icon:after {
+  transform: rotate(-45deg) translate(6px, 0);
+}
+
+.foldable-menu-icon {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 40px;
+  height: 20px;
+  background-color: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9b1212;
+  font-size: 14px;
+}
+
+.upload-container {
+  position: relative;
+  display: inline-block;
+}
+
+.upload-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.upload-icon {
+  margin-right: 5px;
+}
+
+/* Hide the file input */
+#file-upload {
+  display: none;
+}
+
+.pen-sizes {
+  cursor: pointer;
+  margin-left: 5px;
+  
+}
+
+.canvas-size-button2 {
+  display: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #1491ea;
+  border: 1px solid #cccccc;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #f7f7f8;
+  transition: background-color 0.3s ease;
+  padding: 7px;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+
+.pen-tools button {
+  background: none;
+  cursor: pointer;
+  border: 10px solid red;
+}
+
+.pen-tools button i {
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+.pen-tools button.selected {
+  color: #ff0000;
+}
+
+.upload-button input {
+  display: none;
+}
+
+.upload-button {
+  cursor: pointer;
+}
+
+.canvas-size-button {
+  display: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #1491ea;
+  border: 1px solid #cccccc;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #f7f7f8;
+  transition: background-color 0.3s ease;
+  padding: 7px;
+  margin-left: 5px; /* Add spacing around the icon */
+  transition: transform 0.3s ease;
+}
+
+.canvas-size-button1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #1491ea;
+  border: 1px solid #cccccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+
+
+
+.canvas-size-button:hover {
+  background-color: #f0f0f0;
+  transform: translateZ(10px);
+  transform: scale(1.2);
+  transform: rotate(360deg);
+  color: #2fc46b;
+}
+
+.canvas-size-button1:hover {
+  background-color: #f0f0f0;
+  transform: translateZ(10px);
+  transform: scale(1.2);
+  transform: rotate(360deg);
+  color: #2fc46b;
+}
+.canvas-size-button2:hover {
+  background-color: #f0f0f0;
+  transform: translateZ(10px);
+  transform: scale(1.2);
+  transform: rotate(360deg);
+  color: #2fc46b;
+}
+
+.canvas-size-button:focus {
+  outline: none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.canvas-size-button2 {}
+
+.canvas-size-button2 {}
+
+#upl {
+  top: 120px;
+}
+
+#upl1 {
+  top: 160px;
+}
+
+.fullscreen-toggle:hover {
+  background-color: rgb(255, 254, 254);
+  color: #34ca48;
+}
+.canvas-on-top .canvas-container {
+  z-index: 10;
+  background: transparent;
+  cursor: url('./icons8-pen-48.png')-10 35, auto;
+}
+
+.pdf-on-top .pdf-container {
+  z-index: 10;
+}
+
+.top-right-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.textbox {
+  position: absolute;
+  background:transparent;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  cursor: move;
+  
+}

@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Work+Sans:400,500,600,700&display=swap');
+
+body {
+  background:url('./photo-1473773508845-188df298d2d1.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  font-family: "Work Sans", sans-serif;
+}
+
+html {
+  font-size: 100%;
+}
+
+.register-container {
+  max-width: 300px;
+  min-width: 300px;
+  max-height: 700px;
+  width: 30%;
+  height: 60%;
+  margin: 100px auto;
+  background-color:rgba(77, 77, 77, 0.826);
+ border:1px solid black;
+  box-shadow: inset 2px rgba(31, 30, 30, 0.76);
+  box-shadow: inset 1px 20px 10px 1px rgba(51, 213, 210, 0.498);
+  /*animation: glowing 1.5s infinite;*/
+  border-radius:25px;
+ 
+}
+/*
+@keyframes glowing {
+  0% {
+    box-shadow: 0px 0px 10px 5px rgba(240, 158, 227, 0.7);
+  }
+  50% {
+    box-shadow: 0px 0px 20px 10px rgba(114, 105, 214, 0.7);
+  }
+  100% {
+    box-shadow: 0px 0px 10px 5px rgba(65, 234, 237, 0.7);
+  }
+}
+*/
+
+
+
+
+#headerTitle {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  padding: 2rem 0;
+  margin: 0;
+  font-size: 1rem;
+}
+#regg{
+  margin-left: 20px;
+margin-bottom: 10px;
+margin-top: 2px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  max-width: 100%;
+  background-color: rgba(219, 208, 208, 0.007);
+  margin-top: 10px;
+}
+
+.card{
+  border-radius: 25px;
+}
+.register-form input {
+  width: 80%;
+  box-sizing: border-box;
+  border: none;
+  font-size: 1.3rem;
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+  box-shadow: inset 0px -3px 0px 0px rgba(31, 30, 30, 0.76);
+  transition: box-shadow 0.2s ease-in;
+  background:transparent;
+}
+
+.register-form input:focus {
+  box-shadow: inset 0px -3px 0px 0px rgba(34, 193, 195, 0.7);
+  outline: none;
+}
+.register-form input:-webkit-autofill {
+  -webkit-box-shadow: inset 0px -3px 0px 0px rgba(20, 243, 224, 0.76) !important;
+  -webkit-text-fill-color: rgba(187, 187, 187, 0.9) !important;
+  transition: background-color 5000s ease-in-out 0s; /* Increase the transition time to avoid sudden changes */
+}
+.register-form input::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.25s ease-out;
+}
+
+.register-form input:hover::-webkit-input-placeholder,
+.register-form input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.register-form label {
+  align-self: start;
+  padding-left: 4.5rem;
+  padding-bottom: 0.5rem;
+  background-color: black;
+}
+
+.register-form button {
+  border-radius: 25px;
+  width: 80%;
+  height: 40px;
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 700;
+  background: rgb(34, 193, 195);
+  background: rgba(34, 193, 195, 0.7);
+  border: 0px;
+  cursor: pointer;
+  transition: opacity 0.25s ease-out;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#login1{
+  color:aliceblue;
+  margin-bottom: 10px;
+  
+}
+
+.register-form button:hover {
+  opacity: 0.8;
+}
+
+.register-links {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 1.5rem;
+}

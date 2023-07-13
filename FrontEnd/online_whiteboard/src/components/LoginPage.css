@@ -1,0 +1,129 @@
+.login-container {
+  max-width: 300px;
+  min-width: 300px;
+  max-height: 700px;
+  width: 30%;
+  height: 60%;
+  margin: 100px auto;
+  background-color: rgba(77, 77, 77, 0.826);
+  border: 1px solid rgb(20, 20, 21);
+    border-radius: 25px;
+}
+
+.login-container #headerTitle {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  padding: 2rem 0;
+  margin: 0;
+  font-size: 10rem;
+  margin-left:20px;
+}
+#reg{
+  color: aliceblue;
+  margin-bottom: 30px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  max-width: 100%;
+  background-color: rgba(219, 208, 208, 0.007);
+  margin-top: 10px;
+}
+
+.login-form .card {
+  border-radius: 25px;
+}
+
+.login-form input {
+  width: 80%;
+  box-sizing: border-box;
+  border: none;
+  font-size: 1.3rem;
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+  box-shadow: inset 0px -3px 0px 0px rgba(31, 30, 30, 0.76);
+  transition: box-shadow 0.2s ease-in;
+  background: transparent;
+  margin:10px;
+}
+/*
+.login-container {
+  animation: glowing 1.5s infinite linear;
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0px 0px 10px 5px rgba(47, 51, 52, 0.7);
+    transform: rotate(0deg);
+  }
+  50% {
+    box-shadow: 0px 0px 20px 10px rgba(54, 57, 57, 0.7);
+    transform: rotate(180deg);
+  }
+  100% {
+    box-shadow: 0px 0px 10px 5px rgba(68, 69, 69, 0.7);
+    transform: rotate(360deg);
+  }
+}
+*/
+
+#logg{
+  margin:10px;
+  margin-left: 20px;
+}
+.login-form input:focus {
+  box-shadow: inset 0px -3px 0px 0px rgba(34, 193, 195, 0.7);
+  outline: none;
+}
+
+.login-form input::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.25s ease-out;
+}
+
+.login-form input:hover::-webkit-input-placeholder,
+.login-form input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.login-form label {
+  align-self: start;
+  padding-left: 4.5rem;
+  padding-bottom: 0.5rem;
+  color: rgba(187, 187, 187, 0.9);
+}
+.login-form input:-webkit-autofill {
+  -webkit-box-shadow: inset 0px -3px 0px 0px rgba(20, 243, 224, 0.76) !important;
+  -webkit-text-fill-color: rgba(187, 187, 187, 0.9) !important;
+  transition: background-color 5000s ease-in-out 0s; /* Increase the transition time to avoid sudden changes */
+}
+
+
+.login-form button {
+  border-radius: 25px;
+  width: 80%;
+  height: 40px;
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 700;
+ 
+  background: rgba(34, 193, 195, 0.7);
+  border: 0px;
+  cursor: pointer;
+  transition: opacity 0.25s ease-out;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.login-form button:hover {
+  opacity: 0.8;
+}
+
+.login-links {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 1.5rem;
+}
